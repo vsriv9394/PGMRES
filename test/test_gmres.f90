@@ -32,7 +32,10 @@ subroutine parallel_solve()
 
       x = 1.0D0
 
+      write(*,*)
       call gmres(n, Laplacian, b, x, m, 1.0D-7, 1)
+      write(*,*)
+      write(*,*) "Solution:"
       write(*,*) x
 
       call mpi_finalize(i_err)
